@@ -14,7 +14,7 @@ express.directory.json = function(req, res, files, next, dir, showUp, icons){
         'dir': dir
   });
   res.setHeader('Content-Type', 'application/json');
-  res.setHeader('Content-Length', files.length);
+  res.setHeader('Content-Length', Buffer.byteLength(files));
 
   res.end(files);
 };
